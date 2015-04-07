@@ -2,9 +2,9 @@
   <head>
   </head>
   <body>
-    <p>If this test runs correctly, there should be text after this sentence:</p>
+    <p>If this test runs correctly, it should say "Hello, World!" after this:</p>
     <script type="text/javascript">
-      document.write('<script>document.write("<p>Hello, World!</p>");<\/script>');
+      document.write('<script>/* This does nothing; just here to test multiple script tags. */<\/script><script>document.write("<p>Hello, World!</p>");<\/script>');
     </script>
   </body>
 </html>

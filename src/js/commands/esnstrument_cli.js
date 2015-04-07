@@ -96,7 +96,7 @@ if (typeof J$ === 'undefined') {
         fs.writeFileSync(path.join(outDir, origname), src, "utf8");
         fs.writeFileSync(makeSMapFileName(path.join(outDir, instname)), instCodeAndData.sourceMapString, "utf8");
         fs.writeFileSync(path.join(outDir, instname), instCodeAndData.code, "utf8");
-        return instCodeAndData.code;
+        return instCodeAndData.code.replace(/<\/script>/g, '<\\/script>');
     }
 
     function getJalangiRoot() {
