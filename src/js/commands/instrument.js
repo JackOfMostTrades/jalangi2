@@ -151,6 +151,7 @@ if (typeof J$ === 'undefined') {
 
             var instResult = sandbox.instrumentCode(options);
             var instrumentedCode = applyASTHandler(instResult);
+            instrumentedCode = instrumentedCode.replace('</script>', '<\\/script>');
             fs.writeFileSync(path.join(copyDir, instname).replace(/.js$/, ".json"), instResult.sourceMapString, "utf8");
             fs.writeFileSync(path.join(copyDir, origname), src);
             fs.writeFileSync(path.join(copyDir, instname), instrumentedCode);
